@@ -21,7 +21,7 @@
 -𝔸 𝕚𝕤 𝕗𝕠𝕣 𝕒𝕝𝕝 𝕡𝕠𝕣𝕥𝕤, 𝕤𝕔𝕒𝕟𝕟𝕚𝕟𝕘 𝟞𝟝𝟝𝟛𝟝 𝕡𝕠𝕣𝕥𝕤 //  𝕕𝕠𝕖𝕤 𝕟𝕠𝕥 𝕣𝕖𝕢𝕦𝕚𝕣𝕖 𝕒𝕣𝕘𝕦𝕞𝕖𝕟𝕥𝕤
 
 P.S. "Glaros" is a Greek word. It means the seagull bird.
-It never gets tired and able to check every port you need!
+It never gets tired and able to visit every port you need!
 
 (︶ω︶)
 
