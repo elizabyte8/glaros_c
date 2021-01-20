@@ -12,8 +12,6 @@
 #define  S 1000  // -S (standart scan)
 #define  A 65535 // -A (all ports)
 
-char *listports; // for ports in file.txt
-
 char *glaros_ascii[] =
 {
  "________.__",
@@ -22,11 +20,12 @@ char *glaros_ascii[] =
 "\\   \\ \\_\\ \\  |__/ __ \\|  | \\(  <_> )___ \\ ",
 "\\______  /____(____  /__|   \\____/____  >",
 "       \\/          \\/                 \\/ ",
-};// logo
+};
 
 
+char *listports; // for ports in file.txt
 
-int read_file_txt(int *j)// START of func
+int read_file_txt(int *j)
 {
  FILE *fp;// stands for file pointer
 
@@ -61,9 +60,9 @@ int read_file_txt(int *j)// START of func
  return -1;
  }
  
+ *listports = (const char) *listports;
  fclose(fp);
-}// END of func
-
+}
 
 int main(int argc, char **argv)// START of MAIN
 {
@@ -130,7 +129,7 @@ temp[num_length] = *((listports + i) + k);
 
  for(int k = 0; k != '\0'; k++)// extracts ports from 'listp'
  {// char temp[k] = *(listp + i + k);
- host.sin_port = htons(atoi(*(temp + k)));
+ host.sin_port = htons(atoi((listports + i + k)));
 // htons() converts from little endian byte order to big endian (Network) order
 // printf("%d", temp);
 }
