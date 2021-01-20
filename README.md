@@ -17,8 +17,9 @@
      
                         ! 𝐅𝐨𝐫 𝐞𝐝𝐮𝐜𝐚𝐭𝐢𝐨𝐧𝐚𝐥 𝐩𝐮𝐫𝐩𝐮𝐬𝐞𝐬 𝐨𝐧𝐥𝐲 ! 
    
-        MAINLY FOR PENTESTERS MAINLY FOR PENTESTERS MAINLY FOR PENTESTERS MAINLY FOR PENTESTERS 
+    MAINLY FOR PENTESTERS MAINLY FOR PENTESTERS MAINLY FOR PENTESTERS MAINLY FOR PENTESTERS MAINLY FO
     _________________________________________________________________________________________________
+    OF YLNIAM SRETSETNEP ROF YLNIAM SRETSETNEP ROF YLNIAM SRETSETNEP ROF YLNIAM SRETSETNEP ROF YLNIAM
  
     𝐑𝐞𝐦𝐞𝐦𝐛𝐞𝐫, 
     (!!!) 𝐬𝐜𝐚𝐧𝐧𝐢𝐧𝐠 𝐬𝐨𝐦𝐞𝐨𝐧𝐞'𝐬 𝐩𝐨𝐫𝐭𝐬 𝐰𝐢𝐭𝐡𝐨𝐮𝐭 𝐭𝐡𝐞𝐢𝐫 𝐩𝐞𝐫𝐬𝐦𝐢𝐬𝐬𝐢𝐨𝐧 𝐢𝐬 𝐚𝐧 𝐢𝐥𝐥𝐞𝐠𝐚𝐥 𝐩𝐫𝐚𝐜𝐭𝐢𝐜𝐞
