@@ -12,6 +12,8 @@
 #define  S 1000  // -S (standart scan)
 #define  A 65535 // -A (all ports)
 
+char *listports; // for ports in file.txt
+
 char *glaros_ascii[] =
 {
  "________.__",
@@ -20,12 +22,11 @@ char *glaros_ascii[] =
 "\\   \\ \\_\\ \\  |__/ __ \\|  | \\(  <_> )___ \\ ",
 "\\______  /____(____  /__|   \\____/____  >",
 "       \\/          \\/                 \\/ ",
-};
+};// logo
 
 
-char *listports; // for ports in file.txt
 
-int read_file_txt(int *j)
+int read_file_txt(int *j)// START of func
 {
  FILE *fp;// stands for file pointer
 
@@ -59,8 +60,10 @@ int read_file_txt(int *j)
   perror("Error openning file");
  return -1;
  }
+ 
  fclose(fp);
-}
+}// END of func
+
 
 int main(int argc, char **argv)// START of MAIN
 {
