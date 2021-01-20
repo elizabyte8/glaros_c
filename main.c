@@ -14,7 +14,7 @@ int main(int argc, char** argv)// START of MAIN
  // -1 scans only one port
  // -R scans RANGE of ports (-R <first> <last>)
  // -F FAST scan (100 common ports)
- // -S STANDART (1024 ports)
+ // -S STANDART (1000 ports)
  // -A ALL (65535 ports. REQUIRES ROOT PRIVILEGES)
  
   if(*(argv[2]+1) == '1')
@@ -30,7 +30,7 @@ int main(int argc, char** argv)// START of MAIN
  if(*(argv[2]+1) == 'F')
    j == 100;
  if(*(argv[2]+1) == 'S')
-   j = 1024;
+   j = 1000;
  if(*(argv[2]+1) == 'A')
    j = 65535;
  if(*(argv[2]+1) != '1' && *(argv[2]+1) != 'R' && *(argv[2]+1) != 'F' && *(argv[2]+1) != 'S' && *(argv[2]+1) != 'A') 
