@@ -10,8 +10,7 @@
 
 int main(int argc, char** argv)
 {
- int i = 1, j;// vars for loop
- int network_address;
+ unsigned int i = 1, j;// vars for loop
  // -1 scans only one port
  // -R scans RANGE of ports (-R <first> <last>)
  // -F FAST scan (100 common ports)
@@ -51,7 +50,7 @@ int main(int argc, char** argv)
  struct sockaddr_in host;// creates socket for remote (Internet) host
  memset(&host,sizeof(host),0); // zeroes the host's struct
  host.sin_family = AF_INET;
- host.sin_port = htons(i);// htons() converts from little endian byte order to big endian (Network) order
+ host.sin_port = htonl(i);// htons() converts from little endian byte order to big endian (Network) order
  /* inet_aton()  converts IP address from the Internet dot notation to a Network address,
  exp: 192.168.1.1 = 3232235777. The calculation is 
 (192*256^3) + (168*256^2) + (1*256^1) + 256 + 1 = 3232235777
