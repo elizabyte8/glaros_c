@@ -8,7 +8,7 @@
 #include <sys/socket.h>  // contains structs for socket creation
 #include <netinet/in.h>  // for func connect(). Contains tools for Internet domain addresses
 
-int main(int argc, char** argv)
+int main(int argc, char** argv)// START of MAIN
 {
  unsigned int i = 1, j;// vars for loop
  // -1 scans only one port
@@ -50,7 +50,7 @@ int main(int argc, char** argv)
  struct sockaddr_in host;// creates socket for remote (Internet) host
  memset(&host,sizeof(host),0); // zeroes the host's struct
  host.sin_family = AF_INET;
- host.sin_port = htonl(i);// htons() converts from little endian byte order to big endian (Network) order
+ host.sin_port = htons(i);// htons() converts from little endian byte order to big endian (Network) order
  /* inet_aton()  converts IP address from the Internet dot notation to a Network address,
  exp: 192.168.1.1 = 3232235777. The calculation is 
 (192*256^3) + (168*256^2) + (1*256^1) + 256 + 1 = 3232235777
@@ -62,14 +62,14 @@ returns zero if failure, and a nonzero value if success */
  // Returns a nonzero value if failure, and zero if success 
   if(connection < 0) 
   { 
-    printf("[The port %d : is closed] \n",i);
+    printf("| The port %d : is closed [-] \n",i);
     close(sockfd);// disconnection
   }
   else
   {
-    printf("[The port %d : is open] \n",i);
+    printf("| The port %d :  is open  [+] \n",i);
     close(sockfd);// disconnection
   }
  }  
 return 0;
-}
+}// END of MAIN
