@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h>       // for funcs printf() and fgets()
 #include <stdlib.h>      // for func atoi()
 #include <string.h>      // for func memset()
 #include <unistd.h>      // for func to close() our socket
@@ -51,11 +51,14 @@ int main(int argc, char** argv)// START of MAIN
  memset(&host,sizeof(host),0); // zeroes the host's struct
  host.sin_family = AF_INET;
  host.sin_port = htons(i);// htons() converts from little endian byte order to big endian (Network) order
+  
  /* inet_aton()  converts IP address from the Internet dot notation to a Network address,
  exp: 192.168.1.1 = 3232235777. The calculation is 
-(192*256^3) + (168*256^2) + (1*256^1) + 256 + 1 = 3232235777
+(192*256^3) + (168*256^2) + (1*256^1) + 256 + 1 = 3232235777. The result is stored in second parameter -> &host.sin_addr
 returns zero if failure, and a nonzero value if success */
-  if(!inet_aton(argv[1],&host.sin_addr)) 
+  int network_address;
+  network_address = inet_aton(argv[1],&host.sin_addr);
+   if(!network_address)
     perror("network_address ");
   
   int connection = connect(sockfd,(struct sockaddr*)&host, sizeof(struct sockaddr_in)); // connects general socket to the host's one. 
