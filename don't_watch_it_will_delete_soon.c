@@ -12,6 +12,9 @@
 #define  S 1000  // -S (standart scan)
 #define  A 65535 // -A (all ports)
 
+char *listports; // for ports in file.txt
+
+
 char *glaros_ascii[] =
 {
  "________.__",
@@ -23,9 +26,7 @@ char *glaros_ascii[] =
 };
 
 
-char *listports; // for ports in file.txt
-
-int read_file_txt(int *j)
+int *read_file_txt(int *j)
 {
  FILE *fp;// stands for file pointer
 
@@ -57,12 +58,16 @@ int read_file_txt(int *j)
   printf("Error openning file: 'glaros.C_all_ports.txt'");
   exit(1);*/
   perror("Error openning file");
- return -1;
+ //return -1;
  }
  
- *listports = (const char) *listports;
  fclose(fp);
+//int *bl[*j];
+ // for(int i = 0; i < *j; i++)
+// (bl + i) = (int*)(listports + i);
+return (int*)listports;
 }
+
 
 int main(int argc, char **argv)// START of MAIN
 {
@@ -95,8 +100,8 @@ int main(int argc, char **argv)// START of MAIN
   for(int k = 0; k < 6; k++)// prints logo 'glaros'
   printf("%s",glaros_ascii[k]);
   
-  int error; 
-  error = read_file_txt(&j);// calls the func read_file_txt()
+ // int error; 
+ // error = read_file_txt(&j);// calls the func read_file_txt()
 
  for(i; i <= j; i++)
  {
@@ -112,24 +117,12 @@ int main(int argc, char **argv)// START of MAIN
  struct sockaddr_in host;// creates socket for remote (Internet) host
  memset(&host,sizeof(host),0); // zeroes the host's struct
  host.sin_family = AF_INET;
- 
-int num_length;
-for(int k = 0; k != '\0';k++)
-{
-*((listports + i) + k);
-num_length++;
-}
-char temp[num_length];
-char *blya[num_length];
-for(int k = 0; k != '\0';k++)
-{
-temp[num_length] = *((listports + i) + k);
-//(blya + k) = temp[k];
-}
+ int p0rts[j];
 
- for(int k = 0; k != '\0'; k++)// extracts ports from 'listp'
+ for(int k = 0; k < j; k++)// extracts ports from 'listp'
  {// char temp[k] = *(listp + i + k);
- host.sin_port = htons(atoi((listports + i + k)));
+  p0rts[k] = *read_file_txt(&j);
+ host.sin_port = htons(p0rts[k]);
 // htons() converts from little endian byte order to big endian (Network) order
 // printf("%d", temp);
 }
