@@ -32,19 +32,19 @@ int read_file_txt(int *j)
    if(*(j) == F)
    {
     listports = (char*)malloc(F*sizeof(char*));
-    fp = fopen("glaros.C_common_ports.txt", "r");
+    fp = fopen("glaros.C_TCP_common_ports.txt", "r");
     fgets(listports,F,fp);
    }
    if(*(j) == S)
    { 
     listports = (char*)malloc(S*sizeof(char*));
-    fp = fopen("glaros.C_standart_ports.txt","r");
+    fp = fopen("glaros.C_TCP_standart_ports.txt","r");
     fgets(listports,S,fp);
    }
    if(*(j) == A)
    {
     listports = (char*)malloc(A*sizeof(char*));
-    fp = fopen("glaros.C_all_ports.txt","r");
+    fp = fopen("glaros.C_TCP_all_ports.txt","r");
     fgets(listports,A,fp);
    }
  if(fp == NULL)
