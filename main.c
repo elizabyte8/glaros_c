@@ -1,9 +1,3 @@
-/************************************************************
-*** Title: gLaЯo$ the port scanner **************************
-*** Author: cold_summer aka Elizabeth Maslennikova **********
-*** Date: 19/01/2021 ****************************************
-*** Description: Did you close all your ports? **************
-************************************************************/
 #include <stdio.h>       // for funcs printf() and fgets()
 #include <stdlib.h>      // for func atoi()
 #include <string.h>      // for func memset()
@@ -14,7 +8,7 @@
 #include <sys/socket.h>  // contains structs for socket creation
 #include <netinet/in.h>  // for func connect(). Contains tools for Internet domain addresses
 
-#define  F 100   // -F (fast scan)
+#define  F 100  // -F (fast scan)
 #define  S 1000  // -S (standart scan)
 #define  A 65535 // -A (all ports)
 
