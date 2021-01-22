@@ -32,7 +32,7 @@ int main(int argc, char** argv)// START of MAIN
  if(*(argv[2]+1) == 'R')
   {
    i = atoi(argv[3]); 
-   j = atoi(argv[4]);
+   j = atoi(argv[4]); 
   }
  if(*(argv[2]+1) == 'F')
    j == 100;
