@@ -8,7 +8,7 @@
 #include <sys/socket.h>  // contains structs for socket creation
 #include <netinet/in.h>  // for func connect(). Contains tools for Internet domain addresses
 
-#define  F 9   // -F (fast scan)
+#define  F 100   // -F (fast scan)
 #define  S 1000  // -S (standart scan)
 #define  A 65535 // -A (all ports)
 
@@ -94,49 +94,40 @@ int main(int argc, char **argv)// START of MAIN
  
  // down bellow will be written some manipulations with casting of ports (from ascii to int)
 
-if(j == F)
- {
- 
-  //p0rts[k] = atoi(ports+k);// this is the desired result, ports in int type
- // host.sin_port = htons(p0rts);// ports converted into big endian byte order
-//printf("string -> %s\n" ,ports);
-printf("intiger -> %u\n", atoi(listports));}
- //printf("htons -> %d\n", host.sin_port);
- /*else
-  for(int k = 0; k != '\0'; k++)
-   host.sin_port = htons(i);// htons() converts from little endian byte order to big endian (Network) order
+if(*(argv[2]+1) != '1' && *(argv[2]+1) != 'R') 
+host.sin_port = htons(atoi(listports));// htons() converts from little endian byte order to big endian (Network) order
+else
+host.sin_port = htons(i);
  /* inet_aton()  converts IP address from the Internet dot notation to a Network address,
  exp: 192.168.1.1 = 3232235777. The calculation is 
 (192*256^3) + (168*256^2) + (1*256^1) + 256 + 1 = 3232235777. The result is stored in second parameter -> &host.sin_addr
 returns zero if failure, and a nonzero value if success */
   //int network_address;
   //network_address = inet_aton(argv[1],&host.sin_addr);
-  //if(!inet_aton(argv[1],&host.sin_addr))
-host.sin_port = htons(atoi(listports));
-   if(!inet_aton(argv[1],&host.sin_addr))
+  
+
+ if(!inet_aton(argv[1],&host.sin_addr))
     perror("network_address ");
   
   int connection = connect(sockfd,(struct sockaddr*)&host, sizeof(struct sockaddr_in)); // connects general socket to the host's one. 
  // Returns a nonzero value if failure, and zero if success 
   if(connection < 0) 
   { 
-    //if(*argv[2]+1 != '1' && *argv[2]+1 != 'R')
+    if(*(argv[2]+1) != '1' && *(argv[2]+1) != 'R')
      printf("| The port %u : is closed [-] \n", atoi(listports));
-
-    //printf("| The port %d : is closed [-] \n", i);
+    else
+    printf("| The port %d : is closed [-] \n", i);
     close(sockfd);// disconnection
   }
   else
   { 
-    //if(*argv[2]+1 != '1' && *argv[2]+1 != 'R')
+    if(*(argv[2]+1) != '1' && *(argv[2]+1) != 'R')
      printf("| The port %u : is open [+] \n", atoi(listports));
-
-    //printf("| The port %d :  is open  [+] \n", i);
+    else
+    printf("| The port %d :  is open  [+] \n", i);
     close(sockfd);// disconnection
   }
 i++;
-  //fclose(fp); // free(&listports[i]);// returns borrowed memory to OS
- }
-//fclose(fp);  
+ }  
 return 0;
 }// END of MAIN
