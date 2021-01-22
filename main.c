@@ -1,3 +1,10 @@
+/************************************************************
+*** Title: gLaЯo$ the port scanner **************************
+*** Author: cold_summer aka Elizabeth Maslennikova **********
+*** Date: 19/01/2021 ****************************************
+*** Description: Did you close all your ports? **************
+************************************************************/
+
 #include <stdio.h>       // for funcs printf() and fgets()
 #include <stdlib.h>      // for func atoi()
 #include <string.h>      // for func memset()
