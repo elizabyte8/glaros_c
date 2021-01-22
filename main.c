@@ -78,7 +78,7 @@ int main(int argc, char **argv)// START of MAIN
  if((j) == S)
  {
   FILE *fp;
-  fp = fopen("glaros.C_TCP_common_ports.txt","r");
+  fp = fopen("glaros.C_TCP_standart_ports.txt","r");
    for(int k = 0; k <= i; k++)
     for(int l = 0; l <= '\0'; l++)
      fgets(listports,10,fp);
