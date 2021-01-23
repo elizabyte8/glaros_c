@@ -32,7 +32,7 @@ int main(int argc, char **argv)// START of MAIN
  for(int k = 0; k < 6; k++)
  printf("%s\n", glaros_ascii[k]);
 
- //___users_input_section
+ //___users_input_segment
  // -1 scans only one port
  // -R scans RANGE of ports (-R <first> <last>)
  // -F FAST scan (100 common ports)
@@ -60,7 +60,7 @@ int main(int argc, char **argv)// START of MAIN
 // main loop, runs the programm
  while(i <= j)
  {
-//___file_section
+//___file_segment
  if((j) == F)
  {
   FILE *fp;
@@ -81,7 +81,7 @@ int main(int argc, char **argv)// START of MAIN
   fclose(fp);
   }
   
- //___socket section
+ //___socket_segment
  int sockfd = socket(AF_INET, SOCK_STREAM, 0);// creates general socket
   // 'sockfd' stands for socket file descriptor. AF_INET is IPv4, SOCK_STREAM is TCP
   // returns a nonzero value if failure, zero if success
@@ -91,7 +91,7 @@ int main(int argc, char **argv)// START of MAIN
    return -1;
   }   
   
- //___remote_socket_section
+ //___remote_socket_segment
  struct sockaddr_in host;// creates socket for remote (Internet) host
  memset(&host,sizeof(host),0); // zeroes the host's struct
  host.sin_family = AF_INET;
@@ -104,7 +104,7 @@ int main(int argc, char **argv)// START of MAIN
 (192*256^3) + (168*256^2) + (1*256^1) + 256 + 1 = 3232235777. The result is stored in second parameter -> &host.sin_addr
 returns zero if failure, and a nonzero value if success */
 
-//___connection_section
+//___connection_segment
  if(!inet_aton(argv[1],&host.sin_addr))
     perror("network_address ");
   
