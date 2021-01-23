@@ -8,9 +8,9 @@
 #include <sys/socket.h>  // contains structs for socket creation
 #include <netinet/in.h>  // for func connect(). Contains tools for Internet domain addresses
 
-#define  F 100  // -F (fast scan)
-#define  S 1000  // -S (standart scan)
-#define  A 65535 // -A (all ports)
+#define  F 100   // -F  (fast scan)
+#define  S 1000  // -S  (standart scan)
+#define  A 65535 // -A  (all ports)
 
 char *glaros_ascii[] =
 {
@@ -79,7 +79,7 @@ int main(int argc, char **argv)// START of MAIN
   fclose(fp);
   }
   
- // socket section
+ //___socket section
  int sockfd = socket(AF_INET, SOCK_STREAM, 0);// creates general socket
   // 'sockfd' stands for socket file descriptor. AF_INET is IPv4, SOCK_STREAM is TCP
   // returns a nonzero value if failure, zero if success
@@ -88,7 +88,8 @@ int main(int argc, char **argv)// START of MAIN
     perror("socket ");// explains the reason why socket was not created  
    return -1;
   }   
- 
+  
+ //___remote_socket_section
  struct sockaddr_in host;// creates socket for remote (Internet) host
  memset(&host,sizeof(host),0); // zeroes the host's struct
  host.sin_family = AF_INET;
@@ -101,6 +102,7 @@ int main(int argc, char **argv)// START of MAIN
 (192*256^3) + (168*256^2) + (1*256^1) + 256 + 1 = 3232235777. The result is stored in second parameter -> &host.sin_addr
 returns zero if failure, and a nonzero value if success */
 
+//___connection_section
  if(!inet_aton(argv[1],&host.sin_addr))
     perror("network_address ");
   
@@ -123,6 +125,6 @@ returns zero if failure, and a nonzero value if success */
    close(sockfd);// disconnection
   }
   i++;
- }  
+ }// end of main while loop
 return 0;
 }// END of MAIN
