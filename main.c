@@ -78,8 +78,8 @@ int main(int argc, char **argv)// START of MAIN
      fgets(listports,10,fp);
   fclose(fp);
   }
-
- 
+  
+ // socket section
  int sockfd = socket(AF_INET, SOCK_STREAM, 0);// creates general socket
   // 'sockfd' stands for socket file descriptor. AF_INET is IPv4, SOCK_STREAM is TCP
   // returns a nonzero value if failure, zero if success
