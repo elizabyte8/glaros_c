@@ -32,6 +32,7 @@ int main(int argc, char **argv)// START of MAIN
  for(int k = 0; k < 6; k++)
  printf("%s\n", glaros_ascii[k]);
 
+ //___users_input_section
  // -1 scans only one port
  // -R scans RANGE of ports (-R <first> <last>)
  // -F FAST scan (100 common ports)
@@ -56,13 +57,14 @@ int main(int argc, char **argv)// START of MAIN
  if(*(argv[2]+1) != '1' && *(argv[2]+1) != 'R' && *(argv[2]+1) != 'F' && *(argv[2]+1) != 'S' && *(argv[2]+1) != 'A') 
   printf("No such an option");
 
- while(i <= j)// main loop, runs the programm
+// main loop, runs the programm
+ while(i <= j)
  {
-// extracts ports from file.txt
+//___file_section
  if((j) == F)
  {
   FILE *fp;
-  fp = fopen("glaros.C_TCP_common_ports.txt","r");
+  fp = fopen("glaros.C_TCP_common_ports.txt","r");// extracts ports from file.txt
    for(int k = 0; k <= i; k++)
     for(int l = 0; l <='\0'; l++)
      fgets(listports,10,fp);
@@ -125,6 +127,6 @@ returns zero if failure, and a nonzero value if success */
    close(sockfd);// disconnection
   }
   i++;
- }// end of main while loop
+ }//end of main while loop
 return 0;
 }// END of MAIN
